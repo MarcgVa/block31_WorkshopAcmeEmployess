@@ -18,9 +18,7 @@ app.listen(PORT, () => {
 // app routes here
 app.get('/api/employees', async (req, res) => {
   try {
-    //res.status(200).send('right api');
-    const SQL = `SELECT * FROM users`;
-    const response = await pool.query(SQL);
+    const response = await pool.query("SELECT * FROM users");
     res.status(200).json(response.rows);
   } catch (error) { 
     console.error(error);
@@ -29,5 +27,5 @@ app.get('/api/employees', async (req, res) => {
 });
 
 // create your init function
-
+// seed.js has the init function
 // init function invocation
