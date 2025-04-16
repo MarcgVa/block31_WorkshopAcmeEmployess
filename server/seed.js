@@ -1,10 +1,10 @@
+require("dotenv").config();
 const express = require("express");
-require('dotenv').config();
 const app = express();
 const pg = require("pg");
 const PORT = 3000;
 const client = new pg.Client(process.env.DATABASE_URL);
-
+console.log(process.env);
 const init = async (req, res) => {
   try {
     await client.connect();
